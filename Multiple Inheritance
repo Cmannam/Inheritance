@@ -2,31 +2,33 @@ import java.io.*;
 import java.lang.*;
 import java.util.*;
 
-class one {
-    public void print_sap()
+interface one {
+    public void print_sap();
+}
+
+interface two {
+    public void print_hybris();
+}
+
+interface three extends one, two {
+    public void print_sap();
+}
+class child implements three {
+    @Override public void print_sap()
     {
         System.out.println("SAP");
     }
-}
 
-class two extends one {
-    public void print_abap() { System.out.println("ABAP"); }
-}
-
-class three extends two {
-    public void print_sap()
-    {
-        System.out.println("SAP");
-    }
+    public void print_hybris() { System.out.println("HYBRIS"); }
 }
 
 
 public class Main {
     public static void main(String[] args)
     {
-        three g = new three();
-        g.print_sap();
-        g.print_abap();
+        child c = new child();
+        c.print_sap();
+        c.print_hybris();
         
     }
 }
