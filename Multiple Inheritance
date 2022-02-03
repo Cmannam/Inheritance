@@ -1,0 +1,32 @@
+import java.io.*;
+import java.lang.*;
+import java.util.*;
+
+class one {
+    public void print_sap()
+    {
+        System.out.println("SAP");
+    }
+}
+
+class two extends one {
+    public void print_abap() { System.out.println("ABAP"); }
+}
+
+class three extends two {
+    public void print_sap()
+    {
+        System.out.println("SAP");
+    }
+}
+
+
+public class Main {
+    public static void main(String[] args)
+    {
+        three g = new three();
+        g.print_sap();
+        g.print_abap();
+        
+    }
+}
